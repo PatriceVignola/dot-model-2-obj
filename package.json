@@ -1,0 +1,29 @@
+{
+  "name": "dot-model-2-obj",
+  "version": "0.0.1",
+  "description": "A lightweight JavaScript .model to .obj transcoder",
+  "main": "./lib/index.js",
+  "files": [
+    "dist",
+    "lib",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatriceVignola/dot-model-2-obj.git"
+  },
+  "keywords": [
+    "transcoder",
+    "model",
+    "3d",
+    "obj",
+    "opengl",
+    "webgl"
+  ],
+  "author": "Patrice Vignola",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PatriceVignola/dot-model-2-obj/issues"
+  },
+  "homepage": "https://github.com/PatriceVignola/dot-model-2-obj#readme"
+}
