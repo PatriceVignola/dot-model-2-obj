@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "airbnb-base",
+    "plugin:flowtype/recommended",
+    "plugin:jest/recommended"
+  ],
+  "plugins": [
+    "import",
+    "flowtype",
+    "jest",
+    "prettier"
+  ],
+  "env": {
+    "jest": true
+  },
+  "rules": {
+    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
+    "no-unused-expressions": [2, { "allowShortCircuit": true }],
+    "function-paren-newline": [0],
+    "prettier/prettier": [2, "fb", "@format"],
+    "import/no-extraneous-dependencies": [2, {"devDependencies": true}],
+    "object-curly-spacing": [0],
+    "no-mixed-operators": [0]
+  }
+}
