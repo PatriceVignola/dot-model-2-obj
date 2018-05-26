@@ -34,12 +34,10 @@
     "url": "https://github.com/PatriceVignola/dot-model-2-obj/issues"
   },
   "homepage": "https://github.com/PatriceVignola/dot-model-2-obj#readme",
-  "dependencies": {
+  "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0"
-  },
-  "devDependencies": {
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-flowtype": "^2.47.1",
