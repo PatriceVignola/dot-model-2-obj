@@ -17,7 +17,7 @@ jobs:
           command: yarn install --pure-lockfile
       - save_cache:
           paths:
-            - ~/repo
+            - ~/repo/node_modules
           key: dependencies-{{ checksum "package.json" }}-{{ checksum "cache_version" }}
       - run:
           name: Removing Cache Version file
