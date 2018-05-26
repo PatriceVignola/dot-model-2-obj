@@ -11,6 +11,11 @@
     "prettier": "prettier es6 --write src/**/*.js",
     "validate": "yarn lint"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn prettier && yarn validate"
+    }
+  },
   "files": [
     "dist",
     "lib",
@@ -46,6 +51,7 @@
     "eslint-plugin-prettier": "^2.6.0",
     "flow-bin": "^0.73.0",
     "flow-typed": "^2.4.0",
+    "husky": "^1.0.0-rc.7",
     "prettier": "^1.12.1"
   }
 }
