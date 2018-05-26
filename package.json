@@ -1,7 +1,7 @@
 {
   "name": "dot-model-2-obj",
   "version": "0.0.1",
-  "description": "A lightweight JavaScript .model to .obj transcoder",
+  "description": "Transcode .model 3D files to .obj in JavaScript.",
   "main": "./lib/index.js",
   "files": [
     "dist",
