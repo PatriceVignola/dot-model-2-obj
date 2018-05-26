@@ -25,3 +25,6 @@ jobs:
       - run:
           name: Testing, Linting, Static Checking and Building
           command: yarn validate
+      - run:
+          name: Generating Coveralls Report
+          command: yarn coveralls < coverage/lcov.info
