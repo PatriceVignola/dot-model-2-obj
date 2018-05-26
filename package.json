@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Transcode .model 3D files to .obj in JavaScript.",
   "main": "./lib/index.js",
+  "scripts": {
+    "build-lib": "babel src -d lib --ignore '**/*.test.js' && flow gen-flow-files src/ --out-dir lib/",
+    "build": "yarn build-lib"
+  },
   "files": [
     "dist",
     "lib",
@@ -25,5 +29,14 @@
   "bugs": {
     "url": "https://github.com/PatriceVignola/dot-model-2-obj/issues"
   },
-  "homepage": "https://github.com/PatriceVignola/dot-model-2-obj#readme"
+  "homepage": "https://github.com/PatriceVignola/dot-model-2-obj#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.73.0",
+    "flow-typed": "^2.4.0"
+  }
 }
