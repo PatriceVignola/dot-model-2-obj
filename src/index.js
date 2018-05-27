@@ -12,7 +12,7 @@ function writeCoordinatesBlock(
   prefix: string,
   stride: number,
 ): string {
-  let coordinatesBlock = '';
+  let coordsBlock = '';
   let currentLine = prefix;
 
   coordinates.forEach((coordinate, i) => {
@@ -20,19 +20,23 @@ function writeCoordinatesBlock(
 
     // This is the last coordinate of the element
     if ((i + 1) % stride === 0) {
-      coordinatesBlock += `\n ${currentLine}`;
+      coordsBlock += currentLine + (i < coordinates.length - 1 ? '\n' : '');
       currentLine = prefix;
     }
   });
 
-  return coordinatesBlock;
+  return coordsBlock;
 }
 
-function writeFacesBlock(model: DotModel): string {
+function writeFacesBlock({
+  vertexCoordinates,
+  uvCoordinates,
+  normalCoordinates,
+  indices,
+  numVerticesPerFace,
+}: DotModel): string {
   let facesBlock = '';
   let currentLine = 'f';
-
-  const {vertexCoordinates, uvCoordinates, normalCoordinates, indices} = model;
 
   indices.forEach((index, i) => {
     // TODO: Absolutize or relativize indices depending on a parameter
@@ -44,8 +48,8 @@ function writeFacesBlock(model: DotModel): string {
     }`;
 
     // This is the last vertex of the face
-    if ((i + 1) % model.numVerticesPerFace === 0) {
-      facesBlock += `\n ${currentLine}`;
+    if ((i + 1) % numVerticesPerFace === 0) {
+      facesBlock += currentLine + (i < indices.length - 1 ? '\n' : '');
       currentLine = 'f';
     }
   });
@@ -82,7 +86,7 @@ function dotModel2Obj(buffer: ArrayBuffer): ArrayBuffer {
   // TODO: Add support for interpolations (Taylor, B-splines, etc.)
   // TODO: Add support for mtllib
 
-  const objData = `${vertexCoordinatesBlock}${uvCoordinatesBlock}${normalsBlock}${facesBlock}`;
+  const objData = `${vertexCoordinatesBlock}\n${uvCoordinatesBlock}\n${normalsBlock}\n${facesBlock}`;
 
   return new TextEncoder().encode(objData).buffer;
 }
