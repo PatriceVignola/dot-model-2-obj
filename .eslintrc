@@ -20,6 +20,10 @@
     "prettier/prettier": [2, "fb", "@format"],
     "import/no-extraneous-dependencies": [2, {"devDependencies": true}],
     "object-curly-spacing": [0],
-    "no-mixed-operators": [0]
-  }
+    "no-mixed-operators": [0],
+    "object-curly-newline": [0]
+  },
+  "globals": {
+    "TextEncoder": true
+  },
 }
