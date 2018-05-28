@@ -3095,9 +3095,9 @@ listenercount@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/listenercount/-/listenercount-1.0.1.tgz#84c8a72ab59c4725321480c975e6508342e70937"
 
-load-dot-model@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/load-dot-model/-/load-dot-model-1.1.4.tgz#7fd3d9f26e59e3fc8220e6c949e8b49ec591103f"
+load-dot-model@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/load-dot-model/-/load-dot-model-1.2.1.tgz#27077fe239ae695de3442c29405705198c8fa770"
 
 load-json-file@^1.0.0:
   version "1.1.0"

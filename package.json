@@ -34,7 +34,8 @@
     "3d",
     "obj",
     "opengl",
-    "webgl"
+    "webgl",
+    ".model"
   ],
   "author": "Patrice Vignola",
   "license": "MIT",
@@ -70,7 +71,7 @@
     "uglify-es": "^3.3.9"
   },
   "dependencies": {
-    "load-dot-model": "^1.1.4",
+    "load-dot-model": "1.2.1",
     "text-encoding": "^0.6.4"
   }
 }

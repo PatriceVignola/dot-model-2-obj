@@ -28,13 +28,7 @@ function writeCoordinatesBlock(
   return coordsBlock;
 }
 
-function writeFacesBlock({
-  vertexCoordinates,
-  uvCoordinates,
-  normalCoordinates,
-  indices,
-  numVerticesPerFace,
-}: DotModel): string {
+function writeFacesBlock({indices, numVerticesPerFace}: DotModel): string {
   let facesBlock = '';
   let currentLine = 'f';
 
@@ -43,9 +37,9 @@ function writeFacesBlock({
     // TODO: Don't write any slashes if UVs and normals are missing
     // TODO: Write nothing between the middle slashes if there are no UVs
     // TODO: Don't write the last slash if there are no normals
-    currentLine += ` ${vertexCoordinates[index]}/${uvCoordinates[index]}/${
-      normalCoordinates[index]
-    }`;
+
+    // Indices in .obj files are one-based
+    currentLine += ` ${index + 1}/${index + 1}/${index + 1}`;
 
     // This is the last vertex of the face
     if ((i + 1) % numVerticesPerFace === 0) {
@@ -64,20 +58,16 @@ function dotModel2Obj(buffer: ArrayBuffer): ArrayBuffer {
   const vertexCoordinatesBlock = writeCoordinatesBlock(
     model.vertexCoordinates,
     'v',
-    model.numVerticesPerFace,
+    model.numCoordinatesPerVertex,
   );
 
   const uvCoordinatesBlock = writeCoordinatesBlock(
     model.uvCoordinates,
     'vt',
-    model.numVerticesPerFace,
+    2,
   );
 
-  const normalsBlock = writeCoordinatesBlock(
-    model.normalCoordinates,
-    'vn',
-    model.numVerticesPerFace,
-  );
+  const normalsBlock = writeCoordinatesBlock(model.normalCoordinates, 'vn', 3);
 
   const facesBlock = writeFacesBlock(model);
 
