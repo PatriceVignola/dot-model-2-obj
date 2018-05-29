@@ -4,11 +4,9 @@
 
 Transcode .model 3D files to .obj in JavaScript.
 
-`model` is a binary format used by Apple in the [GLEssentials sample](https://developer.apple.com/library/content/samplecode/GLEssentials/Introduction/Intro.html) that they released for [WWDC](https://developer.apple.com/wwdc/) 2010.
+`model` is a binary format used by Apple in WWDC 2010's [GLEssentials sample](https://developer.apple.com/library/content/samplecode/GLEssentials/Introduction/Intro.html).
 
-The loader was originally made to help with the conversion of the GLEssentials [demon.model](https://github.com/PatriceVignola/load-dot-model/blob/master/models/demon.model) file to other file formats (e.g. obj) in order to have consistent examples for [react-native-gl-model-view](https://github.com/rastapasta/react-native-gl-model-view).
-
-load-dot-model can be used in pure JavaScript applications runnable directly in the browser, as well as any ES5 and ES6 applications ([Node.js](https://nodejs.org/), [React](https://reactjs.org/), [React Native](https://facebook.github.io/react-native/), [React Native Web](https://github.com/necolas/react-native-web), etc).
+dot-model-2-obj can be used in pure JavaScript applications runnable directly in the browser, as well as any ES5 and ES6 applications ([Node.js](https://nodejs.org/), [React](https://reactjs.org/), [React Native](https://facebook.github.io/react-native/), [React Native Web](https://github.com/necolas/react-native-web), etc).
 
 ## Getting Started
 
@@ -39,7 +37,7 @@ To run the examples, follow the following steps depending on your platform:
 
 First, make sure to run `yarn build` or `npm run build`. This will generate the `dist/dot-model-2-obj.min.js` file used in the example.
 
-Then, simply drag and drop `example.html` in your favorite browser and select the [demon.model](https://github.com/PatriceVignola/dot-model-2-obj/blob/master/models/demon.model) file available in the models folder at the root of this repository. The transcoder will transcode the .model file to a .obj file directly in your `downloads` folder.
+Then, simply drag and drop `examples/pure-javascript-example/example.html` in your favorite browser, select `models/demon.model` and press the `Transcode` button. The transcoder will transcode the .model file and save `demon.obj` in your downloads folder.
 
 ### React
 
@@ -59,4 +57,4 @@ Coming soon...
 
 ## License
 
-dot-model-2-obj is [MIT licensed](https://github.com/PatriceVignola/load-dot-model/blob/master/LICENSE).
+dot-model-2-obj is [MIT licensed](https://github.com/PatriceVignola/dot-model-2-obj/blob/master/LICENSE).
